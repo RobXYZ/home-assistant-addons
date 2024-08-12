@@ -27,5 +27,8 @@ fi
 unset ZABBIX_TLSPSK_IDENTITY
 unset ZABBIX_TLSPSK_SECRET
 
+# Add the current user to the docker group
+addgroup zabbix docker
+
 # Run zabbix-agent2 in foreground
 exec su zabbix -s /bin/ash -c "zabbix_agent2 -f"

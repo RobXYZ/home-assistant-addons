@@ -33,5 +33,18 @@
     "hostname": "str",
     "tlspskidentity": "str?",
     "tlspsksecret": "str?"
-  }
+  },
+  "map": [
+    "config:rw"
+  ],
+  "environment": {
+    "DOCKER_SOCKET": "/var/run/docker.sock"
+  },
+  "volumes": [
+    {
+      "host": "/var/run/docker.sock",
+      "container": "/var/run/docker.sock",
+      "read_only": true
+    }
+  ]
 }
